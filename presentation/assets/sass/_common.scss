@@ -1,0 +1,394 @@
+/* used for defining common classes */
+.container {
+    width: 1188px;
+}
+
+header {
+    background: $gray-dark none repeat scroll 0 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-bottom: solid 5px $border-header;
+
+    @include box-shadow(1px, 4px, 9px, -6px, $box-shadow-color-dark, true);
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+
+        &:hover {
+            color: $link-color;
+            text-decoration: underline;
+        }
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    .logo {
+        float: left;
+        min-height: 1px;
+        padding: 8px 0 8px 28px;
+        position: relative;
+        width: 25%;
+
+        span {
+            display: none;
+        }
+
+        img {
+            max-width: 75%;
+            min-width: 200px;
+        }
+    }
+
+    .applicationTitle {
+        overflow: hidden;
+        padding: 8px 14px;
+        position: relative;
+        text-align: right;
+
+        a {
+            font-size: 36px;
+            font-variant: normal;
+            font-weight: 100;
+            font-style: italic;
+        }
+    }
+}
+
+nav {
+    padding: 25px 0;
+    background-color: $bg-color-light;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    a {
+        display: block;
+        font: bold 16px Sans-serif;
+        color: $color-nav-link;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+
+        &:hover {
+           text-decoration: none;
+        }
+    }
+
+    li {
+        background:
+            url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1NzYiIGhlaWdodD0iMTUyIiB2aWV3Ym94PSIwIDAgNTc2IDE1MiIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+DQogIDxwYXRoIHRyYW5zZm9ybT0idHJhbnNsYXRlKDEwLCAtMTg1KSIgZD0iTSAwIDE4OS41IEwgMzkuNzQxMDcxIDI2MS4yNSBMIDAgMzMzLjEyNSBMIDUxNi42MzM5MyAzMzIgTCA1NTYuMzc1IDI2MCBMIDUxNi42MzM5MyAxODggTCAwIDE4OS41IFoiIHN0cm9rZT0iYmxhY2siIHN0cm9rZS1vcGFjaXR5PSIwLjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9IndoaXRlIiAvPg0KPC9zdmc+")
+            no-repeat;
+        background-size: 100% 100%;
+        flex: 1 1 auto;
+        margin: 0 -5px;
+
+        &.completed {
+            a {
+                color: $color-nav-link-comp;
+            }
+
+            & > a {
+                color: $color-gray;
+            }
+        }
+
+        .fa-check-circle {
+            color: $nav-passed;
+        }
+
+        .fa-times-circle {
+            color: $nav-failed;
+        }
+    }
+}
+
+footer {
+    background: $gray-dark none repeat scroll 0 0;
+    color: $footer-text;
+    font-size: 14px;
+    margin-top: 25px;
+    padding: 25px 0;
+    width: 100%;
+
+    @include box-shadow(1px, 4px, 9px, -6px, $box-shadow-color-dark, true);
+
+    .links {
+        float: right;
+        margin-top: 17px;
+        min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
+        width: 75%;
+
+        ul {
+            float: right;
+
+
+            &:first-child,
+            li::after {
+                content: "|";
+                margin: 0 16px;
+            }
+
+            &:first-child {
+                li:last-child::after {
+                    content: "";
+                }
+            }
+        }
+
+        li {
+            display: inline;
+
+            a {
+                color: $footer-text;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+    }
+
+    .logo {
+        float: right;
+        padding-left: 25px;
+        width: 25%;
+
+        img {
+            height: auto !important;
+            max-width: 132px;
+        }
+    }
+
+}
+
+.progress {
+    background-color: $bg-light;
+    margin-bottom: 22px;
+    overflow: hidden;
+    text-align: center;
+    font-style: italic;
+    color: $text-color;
+    margin-top: 15px;
+
+    @include box-shadow(0, 1px, 2px, 0, $progress-shadow, true);
+    @include border-radius(4px);
+}
+
+.row-title {
+    text-decoration: underline;
+    font-size: 48px;
+    text-align: center;
+}
+
+.exam-question-choice {
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+
+    &.multiple-choice {
+        margin-left: 15px;
+    }
+
+    &:hover {
+        background: $exam-bg;
+    }
+
+    .choice-label {
+        border: 4px solid $exam-border;
+        font-size: 48px;
+        color: $text-color;
+        text-align: center;
+        text-decoration: none;
+
+        @include border-radius(7px);
+
+        &.choice-label-tf{
+            text-transform: capitalize;
+        }
+    }
+
+    .choice-text {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-top: 20px;
+        line-height: 20px;
+    }
+
+    &.choice-selected {
+        .choice-label {
+            border: 4px solid $exam-selected;
+        }
+    }
+}
+
+.exam-result {
+    text-align: center;
+
+    .exam-passed {
+        color: $exam-text-passed;
+    }
+
+    .exam-failed {
+        color: $exam-text-failed;
+    }
+}
+
+.exam-instructions {
+    text-align: center;
+}
+
+.wrong-question {
+    margin-bottom: 15px;
+
+    .q-title {
+        font-weight: bold;
+        font-size: 18px;
+        color: $gray-dark;
+    }
+
+    .q-explanation {
+        font-weight: normal;
+        font-size: 16px;
+        color: $color-gray;
+    }
+}
+
+.exam-progress {
+    height:30px;
+    margin-top: 10px;
+
+    .color-light {
+        color: $color-light;
+    }
+
+    .color-dark {
+        color: $gray-dark;
+    }
+}
+
+.container {
+    hr {
+        border-color: $hr-border;
+        height: 12px;
+        border: 0;
+        margin-left: 15px;
+        padding-left: 0;
+        padding-right: 0;
+
+        @include box-shadow(0, 12px, 12px, -16px, $hr-shadow, true);
+    }
+}
+
+.large-container {
+    width: 95%;
+}
+
+.form-control {
+    width: 100%;
+    border: 1px solid $border-default-color;
+    background: $input-default-bg;
+    color: $input-text-color;
+    line-height: 20px;
+    padding: 4px 6px;
+    font-size: 13px;
+
+    @include border-radius(4px);
+    @include box-shadow(0, 1px, 1px, 0, $box-shadow-color, true)
+}
+
+form {
+    margin: 0 auto 10px;
+    padding: 20px 30px;
+    background-color: $bg-light;
+
+    .form-grup {
+        padding-top: 15px;
+    }
+
+    .form-control {
+        background-color: $input-default-bg;
+        border: 1px solid $border-default-color;
+        color: $input-text-color;
+        line-height: 20px;
+        padding: 4px 6px;
+        font-size: 13px;
+
+        @include border-radius(3px);
+        @include box-shadow(0, 1px, 1px, 0, $box-shadow-color, true);
+
+        &:focus {
+            border-color: $border-dark;
+            outline: 0;
+            @include box-shadow(0, 1px, 1px, 0, rgba(0, 0, 0, .075), true, true, 0, 0, 8px, #333);
+        }
+
+    }
+
+    .form-tooltip {
+        color: $tooltip-color;
+        font-size: 14px;
+    }
+
+    label {
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+        margin-top: 3px;
+    }
+
+    input,
+    select {
+        &.form-control {
+            &.ng-invalid {
+                &.ng-touched {
+                    border-color: #CC0000;
+                    outline: 0;
+                    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px #B00;
+                }
+            }
+        }
+    }
+
+}
+
+.title-container {
+    padding: 25px 0;
+    background-color: $bg-color-light;
+    margin-bottom: 20px;
+}
+
+.non-selectable-text {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+    user-select: none;           /* non-prefixed version, currently
+                                not supported by any browser */
+}
+
+.error-box {
+    background-color: $bg-light;
+    margin: 0 auto 10px;
+    padding: 20px 30px;
+    color: $exam-text-failed;
+}

@@ -1,0 +1,42 @@
+/* define global variables used in the sass files */
+//** Background color for `<body>`.
+$body-bg:               #ffffff;
+//** Global text color on `<body>`.
+$gray-dark:             #333333;
+$input-default-bg:      #F8F8F8;
+$input-text-color:      #555555;
+$box-shadow-color:      rgba(0, 0, 0, 0.075);
+$box-shadow-color-dark: #111111;
+$border-default-color:  #C7C7C7;
+$border-header:         #ffe359;
+$bg-color-light:        #f1efe5;
+$link-color:            #ffffff;
+$color-nav-link:        rgba(0, 0, 0, .25);
+$color-nav-link-comp:   rgba(0, 0, 0, .5);
+$color-gray:            #777777;
+$nav-passed:            #8bc040;
+$nav-failed:            #cf5b33;
+$text-color:            #929292;
+$bg-light:              #f5f5f5;
+$progress-shadow:       rgba(0, 0, 0, 0.1);
+$color-light:           #ffffff;
+$hr-border:             #e2e2e2;
+$hr-shadow:             rgba(0, 0, 0, .5);
+/* Exam */
+$exam-bg:               rgba(202, 202, 202, 0.2);
+$exam-border:           #e1e3e6;
+$exam-selected:         #04C504;
+$exam-text-failed:      #c50404;
+$exam-text-passed:      #04C504;
+/* Form */
+$border-dark:           #2d2d2d;
+$tooltip-color:         #adadad;
+/* Btn color*/
+$btn-bg-default:        #FFE359;
+$btn-bg-hover:          #046A38;
+$btn-bg-focus:          #ffffff;
+$btn-border:            #e2e2e2;
+$btn-text:              #00558C;
+$btn-text-hover:        #ffffff;
+$btn-text-focus:        #828C94;
+$footer-text:           #cccccc;
