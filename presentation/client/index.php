@@ -90,10 +90,16 @@
     <script src="/client/app/dashboard/config.route.js"></script>
     <script src="/client/app/dashboard/dashboard.js"></script>
 
-    <!--motto module-->
-    <script src="/client/app/motto/motto.module.js"></script>
-    <script src="/client/app/motto/config.route.js"></script>
-    <script src="/client/app/motto/motto.js"></script>
+    <!--agenda module-->
+    <script src="/client/app/agenda/agenda.module.js"></script>
+    <script src="/client/app/agenda/config.route.js"></script>
+    <script src="/client/app/agenda/agenda.js"></script>
+    <!-- endinject -->
+    
+    <!--new-contact module-->
+    <script src="/client/app/new-contact/new-contact.module.js"></script>
+    <script src="/client/app/new-contact/config.route.js"></script>
+    <script src="/client/app/new-contact/new-contact.js"></script>
     <!-- endinject -->
 </body>
 </html>

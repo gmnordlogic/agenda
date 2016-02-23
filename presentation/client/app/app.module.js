@@ -24,8 +24,8 @@
          */
         'app.dashboard',
         'app.layout',
-        'app.motto',
-        //'app.agenda'
+        'app.agenda',
+        'app.newcontact'
     ] );
 
 }) ();

@@ -6,6 +6,7 @@
         .factory('dataservice', dataservice);
 
     /* @ngInject */
+    dataservice.$inject = ["$http", "$location", "$q", "exception", "logger"];
     function dataservice($http, $location, $q, exception, logger) {
         var isPrimed = false;
         var primePromise;
@@ -13,23 +14,10 @@
         var service = {
             getAgendaList: getAgendaList,
             getAgendaCount: getAgendaCount,
-            getMotto: getMotto,
             ready: ready
         };
 
         return service;
-
-        function getMotto(){
-            return $http.get('/api/mam')
-                .then(getMottoComplete)
-                .catch(function(message){
-                    exception.catcher('Connection failed for Motto')(message);
-                });
-
-            function getMottoComplete(data, status, headers, config){
-                return data.data[0].data.results;
-            }
-        }
 
         function getAgendaList() {
             return $http.get('/api/maa')

@@ -5,10 +5,9 @@
         .module('app.dashboard')
         .run(appRun);
 
-    // appRun.$inject = ['routehelper'];
+   appRun.$inject = ['routehelper'];
 
     /* @ngInject */
-    appRun.$inject = ['routehelper'];
     function appRun(routehelper) {
         routehelper.configureRoutes(getRoutes());
     }

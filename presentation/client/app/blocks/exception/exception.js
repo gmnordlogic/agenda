@@ -6,6 +6,7 @@
         .factory('exception', exception);
 
     /* @ngInject */
+    exception.$injection = ['logger'];
     function exception(logger) {
         var service = {
             catcher: catcher

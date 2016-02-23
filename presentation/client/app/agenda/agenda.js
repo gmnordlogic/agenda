@@ -6,6 +6,7 @@
         .controller('Agenda', Agenda);
 
     /* @ngInject */
+    Agenda.$inject = ["dataservice", "logger"];
     function Agenda(dataservice, logger) {
         /*jshint validthis: true */
         var vm = this;

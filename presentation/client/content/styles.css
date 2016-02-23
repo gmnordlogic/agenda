@@ -379,10 +379,6 @@ a {
 /* #endregion */
 
 
-.motto-name {
-    font-size: 1.2em;
-}
-
 .agenda-name {
     font-size: 1.2em;
 }
@@ -390,7 +386,6 @@ a {
     margin: 0.1em !important;
     padding: 0.1em;
 }
-
 
 
 /*#region wrapper for angular ng-include and ng-view animations*/

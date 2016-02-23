@@ -5,7 +5,6 @@
                 <div class="widget wblue">
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
-                        <!-- <pre>{{vm.motto | json}}</pre> -->
 
                         <input data-ng-model="vm.filter.name" placeholder="Find contact by name" type="search"/>
                         <table class="table table-condensed table-striped">
@@ -14,6 +13,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -21,6 +21,7 @@
                                 <td><span class="agenda-name">{{c.fname}} {{c.lname}}</span></td>
                                 <td>{{c.email | lowercase  }}</td>
                                 <td>{{c.phone }}</td>
+                                <td><a href="#edit"><i class="fa fa-edit"></i> Edit</a></td>
                             </tr>
                             </tbody>
                         </table>

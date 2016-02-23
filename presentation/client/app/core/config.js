@@ -16,7 +16,7 @@
 
     var configs = {
         appErrorPrefix: '[NG-Agenda Error] ', //Configure the exceptionHandler decorator
-        appTitle: 'Angular Agenda',
+        appTitle: 'AngularUI Agenda',
         version: '1.0.0'
     };
 
