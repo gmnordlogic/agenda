@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('app.motto', []);
+    angular.module('app.agenda', []);
 })();

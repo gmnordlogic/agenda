@@ -11,13 +11,13 @@
         toastr.options.positionClass = 'toast-bottom-right';
     }
 
-    var config = {
+    var configs = {
         appErrorPrefix: '[NG-Agenda Error] ', //Configure the exceptionHandler decorator
         appTitle: 'Angular Agenda',
         version: '1.0.0'
     };
 
-    core.value('config', config);
+    core.value('config', configs);
 
     core.config(configure);
 

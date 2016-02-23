@@ -13,7 +13,6 @@
         var service = {
             getAgendaList: getAgendaList,
             getAgendaCount: getAgendaCount,
-            getAgenda: getAgenda,
             getMotto: getMotto,
             ready: ready
         };
@@ -32,43 +31,34 @@
             }
         }
 
-        function getAvengers() {
+        function getAgendaList() {
             return $http.get('/api/maa')
-                .then(getAvengersComplete)
+                .then(getAgendaComplete)
                 .catch(function(message) {
-                    exception.catcher('XHR Failed for getAvengers')(message);
+                    exception.catcher('XHR Failed for getAgendaList')(message);
                     $location.url('/');
                 });
 
-            function getAvengersComplete(data, status, headers, config) {
+            function getAgendaComplete(data, status, headers, config) {
                 return data.data[0].data.results;
             }
         }
 
-        function getAvengerCount() {
+        function getAgendaCount() {
             var count = 0;
-            return getAvengersCast()
-                .then(getAvengersCastComplete)
-                .catch(exception.catcher('XHR Failed for getAvengerCount'));
+            return getAgendaNames()
+                .then(getAgendaPersonComplete)
+                .catch(exception.catcher('XHR Failed for getAgendaCount'));
 
-            function getAvengersCastComplete (data) {
+            function getAgendaPersonComplete (data) {
                 count = data.length;
                 return $q.when(count);
             }
         }
 
-        function getAvengersCast() {
+        function getAgendaNames() {
             var cast = [
                 {name: 'Robert Downey Jr.', character: 'Tony Stark / Iron Man'},
-                {name: 'Chris Hemsworth', character: 'Thor'},
-                {name: 'Chris Evans', character: 'Steve Rogers / Captain America'},
-                {name: 'Mark Ruffalo', character: 'Bruce Banner / The Hulk'},
-                {name: 'Scarlett Johansson', character: 'Natasha Romanoff / Black Widow'},
-                {name: 'Jeremy Renner', character: 'Clint Barton / Hawkeye'},
-                {name: 'Gwyneth Paltrow', character: 'Pepper Potts'},
-                {name: 'Samuel L. Jackson', character: 'Nick Fury'},
-                {name: 'Paul Bettany', character: 'Jarvis'},
-                {name: 'Tom Hiddleston', character: 'Loki'},
                 {name: 'Clark Gregg', character: 'Agent Phil Coulson'}
             ];
             return $q.when(cast);

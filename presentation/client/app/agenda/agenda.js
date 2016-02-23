@@ -2,29 +2,29 @@
     'use strict';
 
     angular
-        .module('app.motto')
-        .controller('Motto', Motto);
+        .module('app.agenda')
+        .controller('Agenda', Agenda);
 
     /* @ngInject */
-    function Motto(dataservice, logger) {
+    function Agenda(dataservice, logger) {
         /*jshint validthis: true */
         var vm = this;
-        vm.motto = [];
-        vm.title = 'Motto';
+        vm.agenda = [];
+        vm.title = 'Agenda';
 
         activate();
 
         function activate() {
-            return getMotto().then(function() {
-                logger.info('Activated Motto View');
+            return getAgenda().then(function() {
+                logger.info('Activated Agenda View');
             });
         }
 
-        function getMotto() {
-            return dataservice.getMotto().then(function(data) {
-                vm.motto = data;
-                console.log(vm.motto);
-                return vm.motto;
+        function getAgenda() {
+            return dataservice.getAgenda().then(function(data) {
+                vm.agenda = data;
+                console.log(vm.agenda);
+                return vm.agenda;
             });
         }
     }

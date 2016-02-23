@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.motto')
+        .module('app.agenda')
         .run(appRun);
 
     // appRun.$inject = ['routehelper']
@@ -15,15 +15,15 @@
     function getRoutes() {
         return [
             {
-                url: '/motto',
+                url: '/agenda',
                 config: {
-                    templateUrl: 'app/motto/motto.html',
-                    controller: 'Motto',
+                    templateUrl: 'app/agenda/agenda.html',
+                    controller: 'Agenda',
                     controllerAs: 'vm',
-                    title: 'motto',
+                    title: 'agenda',
                     settings: {
                         nav: 2,
-                        content: '<i class="fa fa-circle"></i> Motto'
+                        content: '<i class="fa fa-mobile-phone"></i> Agenda'
                     }
                 }
             }
