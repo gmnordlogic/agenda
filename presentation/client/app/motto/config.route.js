@@ -8,6 +8,7 @@
     // appRun.$inject = ['routehelper']
 
     /* @ngInject */
+    appRun.$inject = ['routehelper'];
     function appRun(routehelper) {
         routehelper.configureRoutes(getRoutes());
     }

@@ -6,9 +6,12 @@
     core.config(toastrConfig);
 
     /* @ngInject */
+    toastrConfig.$inject = ['toastr'];
+
     function toastrConfig(toastr) {
         toastr.options.timeOut = 4000;
         toastr.options.positionClass = 'toast-bottom-right';
+        toastr.options.progressBar = true;
     }
 
     var configs = {
@@ -22,6 +25,7 @@
     core.config(configure);
 
     /* @ngInject */
+    configure.$inject = ['$logProvider', '$routeProvider', 'routehelperConfigProvider', 'exceptionHandlerProvider'];
     function configure ($logProvider, $routeProvider, routehelperConfigProvider, exceptionHandlerProvider) {
         // turn debugging off/on (no info or warn)
         if ($logProvider.debugEnabled) {
@@ -42,6 +46,6 @@
         routehelperConfigProvider.config.resolveAlways = resolveAlways;
 
         // Configure the common exception handler
-        exceptionHandlerProvider.configure(config.appErrorPrefix);
+        exceptionHandlerProvider.configure(configs.appErrorPrefix);
     }
 })();

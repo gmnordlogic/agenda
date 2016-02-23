@@ -6,6 +6,7 @@
         .directive('ccWidgetHeader', ccWidgetHeader);
 
     /* @ngInject */
+    ccWidgetHeader.$inject = [];
     function ccWidgetHeader () {
         //Usage:
         //<div data-cc-widget-header title="vm.map.title"></div>

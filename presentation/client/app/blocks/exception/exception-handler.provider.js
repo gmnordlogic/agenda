@@ -6,7 +6,7 @@
     angular
         .module('blocks.exception')
         .provider('exceptionHandler', exceptionHandlerProvider)
-        .config(config);
+//        .config(config);
 
     /**
      * Must configure the exception handling

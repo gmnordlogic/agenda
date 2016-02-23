@@ -8,6 +8,7 @@
     // ccSpinner.$inject = ['$window'];
 
     /* @ngInject */
+    ccSpinner.$inject = ['$window'];
     function ccSpinner ($window) {
         // Description:
         //  Creates a new Spinner and sets its options

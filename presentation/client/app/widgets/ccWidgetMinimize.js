@@ -6,6 +6,7 @@
         .directive('ccWidgetMinimize', ccWidgetMinimize);
 
     /* @ngInject */
+    ccWidgetMinimize.$inject = [];
     function ccWidgetMinimize () {
         // Usage:
         // <a data-cc-widget-minimize></a>

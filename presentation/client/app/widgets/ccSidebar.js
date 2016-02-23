@@ -6,6 +6,7 @@
         .directive('ccSidebar', ccSidebar);
 
     /* @ngInject */
+    ccSidebar.$inject = [];
     function ccSidebar () {
         // Opens and closes the sidebar menu.
         // Usage:

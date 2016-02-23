@@ -47,7 +47,7 @@
     <script src="/assets/js/angular-sanitize.js"></script>
     <script src="/assets/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
     <script src="/assets/js/bootstrap.js"></script>
-    <script src="/assets/js/toastr.min.js"></script>
+    <script src="/assets/js/toastr.js"></script>
     <script src="/assets/js/moment.js"></script>
     <script src="/assets/js/ngplus.js"></script>
     <!-- endinject -->
