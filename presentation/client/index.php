@@ -45,6 +45,7 @@
     <script src="/assets/js/angular-animate.js"></script>
     <script src="/assets/js/angular-route.js"></script>
     <script src="/assets/js/angular-sanitize.js"></script>
+    <script src="/assets/js/angular-local-storage.js"></script>
     <script src="/assets/js/ui-bootstrap-tpls-1.1.2.min.js"></script>
     <script src="/assets/js/bootstrap.js"></script>
     <script src="/assets/js/toastr.js"></script>
@@ -69,8 +70,9 @@
     <!-- core module -->
     <script src="/client/app/core/core.module.js"></script>
     <script src="/client/app/core/constants.js"></script>
-    <script src="/client/app/core/config.js"></script>
     <script src="/client/app/core/dataservice.js"></script>
+    <script src="/client/app/core/config.js"></script>
+
 
     <!-- layout -->
     <script src="/client/app/layout/layout.module.js"></script>

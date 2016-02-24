@@ -10,7 +10,7 @@
  * Project: https://github.com/AngularPlus
  */
 (function () {
-    'use strict';
+    //'use strict';
 
     var overlayApp = angular.module('ngplus', []);
 

@@ -1,6 +1,6 @@
 /* global toastr:false, moment:false */
 (function() {
-    'use strict';
+    //'use strict';
 
     angular
         .module('app.core')

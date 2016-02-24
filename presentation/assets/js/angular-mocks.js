@@ -5,7 +5,7 @@
  */
 (function(window, angular, undefined) {
 
-'use strict';
+//'use strict';
 
 /**
  * @ngdoc object

@@ -3,7 +3,7 @@
  * (c) 2010-2016 Google, Inc. http://angularjs.org
  * License: MIT
  */
-(function(window, angular, undefined) {'use strict';
+(function(window, angular, undefined) {//'use strict';
 
 /* jshint ignore:start */
 // this code is in the core, but not in angular-messages.js

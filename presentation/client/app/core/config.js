@@ -1,5 +1,5 @@
 (function() {
-    'use strict';
+//    'use strict';
 
     var core = angular.module('app.core');
 
@@ -32,16 +32,22 @@
             $logProvider.debugEnabled(true);
         }
 
+        /*ready.$inject = ['dataservice'];
+        function ready(dataservice) {
+            return dataservice.ready();
+        }*/
+
         // Configure the common route provider
         routehelperConfigProvider.config.$routeProvider = $routeProvider;
         routehelperConfigProvider.config.docTitle = 'NG-Agenda: ';
         var resolveAlways = { /* @ngInject */
-            ready: function(dataservice) {
+            /*ready: function(dataservice) {
                 return dataservice.ready();
-            }
-            // ready: ['dataservice', function (dataservice) {
-            //    return dataservice.ready();
-            // }]
+            }*/
+            ready: ['dataservice', function (dataservice) {
+                return dataservice.ready();
+            }]
+//            ready: ready()
         };
         routehelperConfigProvider.config.resolveAlways = resolveAlways;
 

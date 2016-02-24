@@ -4,7 +4,7 @@
  * License: MIT
  */
 
-(function() {'use strict';
+(function() {//'use strict';
     function isFunction(value) {return typeof value === 'function';};
 
 /* global: toDebugString: true */
