@@ -14,19 +14,15 @@
         vm.title = 'Agenda';
 
         activate();
+        getAgenda();
 
         function activate() {
-            return getAgenda().then(function() {
-                logger.info('Activated Agenda View');
-            });
+            logger.info('Activated Agenda View');
         }
 
         function getAgenda() {
-            return dataservice.getAgendaList().then(function(data) {
-                vm.agenda = data;
-                console.log(vm.agenda);
-                return vm.agenda;
-            });
+            vm.agenda = dataservice.getAgendaList();
+            return vm.agenda;
         }
     }
 })();

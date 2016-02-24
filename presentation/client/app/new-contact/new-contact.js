@@ -14,7 +14,8 @@
             fname : null,
             lname : null,
             email : null,
-            phone : null
+            phone : null,
+            id    : null
         };
         vm.title       = 'Agenda: New Contact';
         vm.dataservice = dataservice;

@@ -6,7 +6,7 @@
                     <div data-cc-widget-header title="{{vm.title}}"></div>
                     <div class="widget-content user">
 
-                        <input data-ng-model="vm.filter.name" placeholder="Find contact by name" type="search"/>
+                        <!--<input data-ng-model="vm.filter.name" placeholder="Find contact by name" type="search"/>-->
                         <table class="table table-condensed table-striped">
                             <thead>
                             <tr>
@@ -17,11 +17,13 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr data-ng-repeat="c in vm.agenda | filter:vm.filter track by c.id">
-                                <td><span class="agenda-name">{{c.fname}} {{c.lname}}</span></td>
+                            <tr data-ng-repeat="c in vm.agenda | filter:vm.filter track by $index">
+                                <td><span class="agenda-name">{{c.fname | lowercase}} {{c.lname | lowercase}}</span></td>
                                 <td>{{c.email | lowercase  }}</td>
                                 <td>{{c.phone }}</td>
-                                <td><a href="#edit"><i class="fa fa-edit"></i> Edit</a></td>
+                                <td><a href="#agenda/edit/{{c.id}}"><i class="fa fa-edit"></i> Edit</a> &nbsp;
+                                    <a href="#agenda/delete/{{c.id}}"><i class="fa fa-remove"></i> Delete</a>
+                                </td>
                             </tr>
                             </tbody>
                         </table>

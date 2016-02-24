@@ -22,28 +22,22 @@
         return service;
 
         function getAgendaList () {
-            return $http.get ( '/api/maa' )
-                        .then ( getAgendaComplete )
-                        .catch ( function ( message ) {
-                            exception.catcher ( 'XHR Failed for getAgendaList' ) ( message );
-                            $location.url ( '/' );
-                        } );
-
-            function getAgendaComplete ( data, status, headers, config ) {
-                return data.data[ 0 ].data.results;
+            var list  = localStorageService.keys ();
+            var items = [];
+            if ( list.length < 1 ) {
+                logger.warning ( 'Agenda is empty. Please try to add a new contact.' );
+                return false;
+            } else {
+                for ( var i = 0; i < list.length; i++ ) {
+                    items[ i ] = {};
+                    items[ i ] = getData ( list[ i ] );
+                }
+                return items;
             }
         }
 
         function getAgendaCount () {
-            return localStorageService.length();
-        }
-
-        function getAgendaNames () {
-            var cast = [
-                { name : 'Robert Downey Jr.', character : 'Tony Stark / Iron Man' },
-                { name : 'Clark Gregg', character : 'Agent Phil Coulson' }
-            ];
-            return $q.when ( cast );
+            return localStorageService.length ();
         }
 
         function prime () {
@@ -72,14 +66,15 @@
         }
 
         function saveData ( person ) {
-            var str_to_save = angular.toJson ( person, false );
             var id          = (new Date ()).getTime ();
-            return localStorageService.set( id, str_to_save );
+            person.id = id;
+            var str_to_save = angular.toJson ( person, false );
+            return localStorageService.set ( id, str_to_save );
         }
 
         function getData ( id ) {
             var str_from = localStorageService.get ( id );
-            return angular.fromJson(str_from);
+            return angular.fromJson ( str_from );
         }
 
     }
