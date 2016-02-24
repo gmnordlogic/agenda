@@ -17,6 +17,7 @@
             ready          : ready,
             saveData       : saveData,
             getData        : getData,
+            deleteData     : deleteData,
         };
 
         return service;
@@ -67,7 +68,7 @@
 
         function saveData ( person ) {
             var id          = (new Date ()).getTime ();
-            person.id = id;
+            person.id       = id;
             var str_to_save = angular.toJson ( person, false );
             return localStorageService.set ( id, str_to_save );
         }
@@ -75,6 +76,10 @@
         function getData ( id ) {
             var str_from = localStorageService.get ( id );
             return angular.fromJson ( str_from );
+        }
+
+        function deleteData ( id ) {
+            return localStorageService.remove ( id );
         }
 
     }

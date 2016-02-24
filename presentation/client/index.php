@@ -98,10 +98,12 @@
     <script src="/client/app/agenda/agenda.js"></script>
     <!-- endinject -->
     
-    <!--new-contact module-->
-    <script src="/client/app/new-contact/new-contact.module.js"></script>
-    <script src="/client/app/new-contact/config.route.js"></script>
-    <script src="/client/app/new-contact/new-contact.js"></script>
+    <!--contact module-->
+    <script src="/client/app/contact/new-contact.module.js"></script>
+    <script src="/client/app/contact/config.route.js"></script>
+    <script src="/client/app/contact/new-contact.js"></script>
+    <script src="/client/app/contact/edit-contact.module.js"></script>
+    <script src="/client/app/contact/edit-contact.js"></script>
     <!-- endinject -->
 </body>
 </html>

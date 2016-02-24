@@ -24,7 +24,7 @@
         activate ();
 
         function activate () {
-            logger.info ( 'Activated Agenda add new contact' );
+            logger.info ( 'Activated Agenda add contact' );
         }
 
         function submitForm ( newContactForm ) {

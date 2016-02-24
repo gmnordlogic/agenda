@@ -12,6 +12,7 @@
         var vm = this;
         vm.agenda = [];
         vm.title = 'Agenda';
+        vm.delete = deleteData;
 
         activate();
         getAgenda();
@@ -23,6 +24,15 @@
         function getAgenda() {
             vm.agenda = dataservice.getAgendaList();
             return vm.agenda;
+        }
+
+        function deleteData(item){
+            var index = vm.agenda.indexOf(item);
+            var name = vm.agenda[index ].fname + ' ' + vm.agenda[index ].lname;
+            var id = vm.agenda[index ].id;
+            vm.agenda.splice(index, 1);
+            dataservice.deleteData(id);
+            logger.info('Contact deleted: ' + name);
         }
     }
 })();

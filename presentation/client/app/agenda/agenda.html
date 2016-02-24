@@ -21,8 +21,8 @@
                                 <td><span class="agenda-name">{{c.fname | lowercase}} {{c.lname | lowercase}}</span></td>
                                 <td>{{c.email | lowercase  }}</td>
                                 <td>{{c.phone }}</td>
-                                <td><a href="#agenda/edit/{{c.id}}"><i class="fa fa-edit"></i> Edit</a> &nbsp;
-                                    <a href="#agenda/delete/{{c.id}}"><i class="fa fa-remove"></i> Delete</a>
+                                <td><a href="#edit-contact/{{c.id}}"><i class="fa fa-edit"></i> Edit</a> &nbsp;
+                                    <button type="submit" data-ng-click="vm.delete(c)"><i class="fa fa-remove"></i> Delete</button>
                                 </td>
                             </tr>
                             </tbody>

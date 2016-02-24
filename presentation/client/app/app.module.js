@@ -26,7 +26,8 @@
         'app.dashboard',
         'app.layout',
         'app.agenda',
-        'app.newcontact'
+        'app.newcontact',
+        'app.editcontact'
     ] );
 
 }) ();
