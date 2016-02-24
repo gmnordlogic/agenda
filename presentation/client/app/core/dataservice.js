@@ -1,79 +1,86 @@
-(function() {
+(function () {
     //'use strict';
 
     angular
-        .module('app.core')
-        .factory('dataservice', dataservice);
+        .module ( 'app.core' )
+        .factory ( 'dataservice', dataservice );
 
     /* @ngInject */
-    dataservice.$inject = ["$http", "$location", "$q", "exception", "logger"];
-    function dataservice($http, $location, $q, exception, logger) {
+    dataservice.$inject = [ "$http", "$location", "$q", "exception", "logger", "localStorageService" ];
+    function dataservice ( $http, $location, $q, exception, logger, localStorageService ) {
         var isPrimed = false;
         var primePromise;
 
         var service = {
-            getAgendaList: getAgendaList,
-            getAgendaCount: getAgendaCount,
-            ready: ready
+            getAgendaList  : getAgendaList,
+            getAgendaCount : getAgendaCount,
+            ready          : ready,
+            saveData       : saveData,
+            getData        : getData,
         };
 
         return service;
 
-        function getAgendaList() {
-            return $http.get('/api/maa')
-                .then(getAgendaComplete)
-                .catch(function(message) {
-                    exception.catcher('XHR Failed for getAgendaList')(message);
-                    $location.url('/');
-                });
+        function getAgendaList () {
+            return $http.get ( '/api/maa' )
+                        .then ( getAgendaComplete )
+                        .catch ( function ( message ) {
+                            exception.catcher ( 'XHR Failed for getAgendaList' ) ( message );
+                            $location.url ( '/' );
+                        } );
 
-            function getAgendaComplete(data, status, headers, config) {
-                return data.data[0].data.results;
+            function getAgendaComplete ( data, status, headers, config ) {
+                return data.data[ 0 ].data.results;
             }
         }
 
-        function getAgendaCount() {
-            var count = 0;
-            return getAgendaNames()
-                .then(getAgendaPersonComplete)
-                .catch(exception.catcher('XHR Failed for getAgendaCount'));
-
-            function getAgendaPersonComplete (data) {
-                count = data.length;
-                return $q.when(count);
-            }
+        function getAgendaCount () {
+            return localStorageService.length();
         }
 
-        function getAgendaNames() {
+        function getAgendaNames () {
             var cast = [
-                {name: 'Robert Downey Jr.', character: 'Tony Stark / Iron Man'},
-                {name: 'Clark Gregg', character: 'Agent Phil Coulson'}
+                { name : 'Robert Downey Jr.', character : 'Tony Stark / Iron Man' },
+                { name : 'Clark Gregg', character : 'Agent Phil Coulson' }
             ];
-            return $q.when(cast);
+            return $q.when ( cast );
         }
 
-        function prime() {
+        function prime () {
             // This function can only be called once.
-            if (primePromise) {
+            if ( primePromise ) {
                 return primePromise;
             }
 
-            primePromise = $q.when(true).then(success);
+            primePromise = $q.when ( true ).then ( success );
             return primePromise;
 
-            function success() {
+            function success () {
                 isPrimed = true;
-                logger.info('Primed data');
+                logger.info ( 'Primed data' );
             }
         }
 
-        function ready(nextPromises) {
-            var readyPromise = primePromise || prime();
+        function ready ( nextPromises ) {
+            var readyPromise = primePromise || prime ();
 
             return readyPromise
-                .then(function() { return $q.all(nextPromises); })
-                .catch(exception.catcher('"ready" function failed'));
+                .then ( function () {
+                    return $q.all ( nextPromises );
+                } )
+                .catch ( exception.catcher ( '"ready" function failed' ) );
+        }
+
+        function saveData ( person ) {
+            var str_to_save = angular.toJson ( person, false );
+            var id          = (new Date ()).getTime ();
+            return localStorageService.set( id, str_to_save );
+        }
+
+        function getData ( id ) {
+            var str_from = localStorageService.get ( id );
+            return angular.fromJson(str_from);
         }
 
     }
-})();
+}) ();

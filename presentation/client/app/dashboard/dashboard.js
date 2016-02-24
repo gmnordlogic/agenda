@@ -16,12 +16,21 @@
             title: 'Agenda News',
             description: 'AngularUI Agenda is now in production!'
         };
+        vm.counts = {
+            title: 'Agenda Contacts',
+            description: 'You have saved in local storage: '
+        };
         vm.title = 'Dashboard';
+        vm.getContactsCount = getContactsCount;
 
         activate();
 
         function activate() {
             logger.info('Activated Dashboard View');
+        }
+
+        function getContactsCount(){
+            return dataservice.getAgendaCount();
         }
     }
 })();

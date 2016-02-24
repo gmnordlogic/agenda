@@ -6,7 +6,7 @@
     -webkit-text-shadow: none !important;
     -ms-text-shadow: none !important;
     text-shadow: none !important;*/
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+/*    font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
     -webkit-font-smoothing: antialiased;
     /*font-weight: 400;*/
 }
@@ -32,18 +32,18 @@ input, select {
 }
 
 form * {
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+/*    font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
 }
 
 input, textarea {
     background-image: none !important;
     border: 1px solid #ccc !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    /*font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
 }
 
 select {
     font-size: 13px !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+/*    font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -55,7 +55,7 @@ input[type="radio"], input[type="checkbox"] {
 
 .btn {
     background-image: none !important;
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    /*font-family: "Segoe UI", Arial, Helvetica, sans-serif;*/
     font-size: 13px !important;
 }
 .btn.btn-form-md {
@@ -67,9 +67,9 @@ input[type="radio"], input[type="checkbox"] {
     }
 
 body {
-    font-size: 13px;
+    /*font-size: 13px;*/
     line-height: 23px;
-    color: #666;
+    /*color: #666;*/
     background: #111;
     padding-top: 45px;
     -webkit-font-smoothing: antialiased;
@@ -80,7 +80,7 @@ body {
         padding-left: 1.5%;
         padding-right: 1.5%;
     }
-
+/*
 h1, h2, h3, h4, h5, h6 {
     padding: 2px 0;
     margin: 2px 0;
@@ -116,8 +116,9 @@ h6 {
 p {
     padding: 1px 0 !important;
     margin: 1px 0 !important;
-}
+}*/
 
+/*
 a {
     color: #333;
     text-decoration: none !important;
@@ -131,6 +132,7 @@ a {
     a:hover, a:focus, a:active {
         outline: 0;
     }
+*/
 
 .bold {
     font-weight: 600;
@@ -155,6 +157,7 @@ hr {
 .well {
     padding: 10px 15px;
 }
+/*
 
 a.btn {
     font-size: 13px !important;
@@ -170,6 +173,7 @@ a.btn {
     font-weight: 400 !important;
     font-size: 14px;
 }
+*/
 
 .badge {
     font-weight: 400;
@@ -189,6 +193,7 @@ a.btn {
     }
 
 /* Button colors */
+/*
 
 .btn.btn-primary {
     background: #1171a3 !important;
@@ -229,6 +234,7 @@ a.btn {
     .btn.btn-danger:hover {
         background: #d82829 !important;
     }
+*/
 
 /* Label colors */
 
@@ -358,15 +364,16 @@ form {
     margin: 10px;
 }
 
-    form input, form button, form textarea, form select {
+/*    form input, form button, form textarea, form select {
         font-size: 13px !important;
     }
 
     form label {
         font-size: 13px;
         line-height: 13px;
-    }
+    }*/
 
+/*
 .form-inline button {
     margin-left: 15px;
 }
@@ -392,6 +399,7 @@ form {
     background: transparent;
     border-top: 0;
 }
+*/
 
 /* Back to top */
 

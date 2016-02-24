@@ -16,7 +16,7 @@
         //  <div data-cc-sidebar class="sidebar">
         var directive = {
             link: link,
-            restrict: 'A',
+            restrict: 'E',
             scope: {
                 whenDoneAnimating: '&?'
             }

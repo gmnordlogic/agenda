@@ -22,7 +22,7 @@
         }
 
         function getAgenda() {
-            return dataservice.getAgenda().then(function(data) {
+            return dataservice.getAgendaList().then(function(data) {
                 vm.agenda = data;
                 console.log(vm.agenda);
                 return vm.agenda;

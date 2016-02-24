@@ -29,7 +29,7 @@
                                     <div class="col-xs-12">
                                         <label>Email</label>
                                         <input id="email" name="email" type="email" value="" data-ng-model="vm.contact.email" data-ng-required="true" />
-                                        <p data-ng-show="newContactForm.email.$invalid &&newContactForm.email.$touched">First name is required!</p>
+                                        <p data-ng-show="newContactForm.email.$invalid &&newContactForm.email.$touched">Email address is required!</p>
                                     </div>
                                 </div>
 
@@ -37,11 +37,12 @@
                                     <div class="col-xs-12">
                                         <label>Phone</label>
                                         <input id="phone" name="phone" value="" type="text" data-ng-model="vm.contact.phone" data-ng-required="true" />
+                                        <p data-ng-show="newContactForm.phone.$invalid &&newContactForm.phone.$touched">What we can do without phone number??? So, is required!</p>
                                     </div>
                                 </div>
                             </fieldset>
                         </form>
-                        <button class="btn btn-default basic-button" data-ng-click="" data-ng-disabled="newContactForm.$invalid">Save contact</button>
+                        <button class="btn btn-default basic-button" data-ng-click="vm.submitForm(newContactForm)" data-ng-disabled="newContactForm.$invalid">Save contact</button>
 
                     </div>
                     <div class="widget-foot">

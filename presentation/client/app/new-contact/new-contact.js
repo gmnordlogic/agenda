@@ -1,22 +1,47 @@
-(function() {
+(function () {
     //'use strict';
 
     angular
-        .module('app.newcontact')
-        .controller('newContact', newContact);
+        .module ( 'app.newcontact' )
+        .controller ( 'newContact', newContact );
 
     /* @ngInject */
-    newContact.$inject = ['logger'];
-    function newContact(logger) {
+    newContact.$inject = [ 'logger', 'dataservice' ];
+    function newContact ( logger, dataservice ) {
         /*jshint validthis: true */
-        var vm = this;
-        vm.contact = [];
-        vm.title = 'Agenda: New Contact';
+        var vm         = this;
+        vm.contact     = {
+            fname : null,
+            lname : null,
+            email : null,
+            phone : null
+        };
+        vm.title       = 'Agenda: New Contact';
+        vm.dataservice = dataservice;
+        vm.submitForm  = submitForm;
 
-        activate();
+        activate ();
 
-        function activate() {
-            logger.info('Activated Agenda add new contact');
+        function activate () {
+            logger.info ( 'Activated Agenda add new contact' );
         }
+
+        function submitForm ( newContactForm ) {
+            if ( newContactForm ) {
+                if ( !dataservice.saveData ( vm.contact ) ) {
+                    logger.error ( 'the new contact cannot be saved!' );
+                } else {
+                    logger.success ( 'contact saved successfully' );
+
+                    // now we reset and reinitialize the form :)
+                    vm.contact = null;
+                    newContactForm.$setPristine ();
+                    newContactForm.$setUntouched ();
+                }
+            } else {
+                logger.warning ( 'The form is not completed!' );
+            }
+        }
+
     }
-})();
+}) ();
