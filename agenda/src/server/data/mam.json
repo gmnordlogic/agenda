@@ -1,0 +1,58 @@
+[
+    {
+        "code": 200,
+        "status": "Ok",
+        "copyright": "NL",
+        "attributionText": "Data provided by Nordlogic. © 2016 NL",
+        "attributionHTML": "<a href=\"http://nordlogic.com\">Data provided by Nordlogic. © 2016 NL</a>",
+        "etag": "a0d4ffc3cfd53406e2ddaa146ed5ff6ged497e69",
+        "data": {
+            "offset": 0,
+            "limit": 30,
+            "total": 5,
+            "count": 5,
+            "results": [
+                {
+                    "id": 1233,
+                    "name": "Motto Romania",
+                    "description": "Nothing without God",
+                    "modified": "2013-09-18T15:52:01-0400",
+                    "category": "national",
+                    "lang": "en"
+                },
+                {
+                    "id": 1235,
+                    "name": "Motto Senegal",
+                    "description": "One people, one goal, one faith",
+                    "modified": "2014-09-18T15:52:01-0400",
+                    "category": "national",
+                    "lang": "en"
+                },
+                {
+                    "id": 1236,
+                    "name": "Motto Switzerland",
+                    "description": "One for all, all for one.",
+                    "modified": "2014-02-18T15:52:01-0400",
+                    "category": "national",
+                    "lang": "en"
+                },
+                {
+                    "id": 1238,
+                    "name": "Motto AC Milan",
+                    "description": "il club più titolato al mondo",
+                    "modified": "2014-02-18T15:52:01-0400",
+                    "category": "sport",
+                    "lang": "it"
+                },
+                {
+                    "id": 1241,
+                    "name": "Daughters of the American Revolution",
+                    "description": "God, Home, and Country",
+                    "modified": "2012-01-18T15:52:01-0400",
+                    "category": "heritage",
+                    "lang": "en"
+                }
+            ]
+        }
+    }
+]

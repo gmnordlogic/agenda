@@ -1,0 +1,37 @@
+﻿<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wblue">
+                    <div data-cc-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <!-- <pre>{{vm.motto | json}}</pre> -->
+
+                        <input data-ng-model="vm.filter.name" placeholder="Find motto by title" type="search"/>
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Motto</th>
+                                <th>Language</th>
+                                <th>Category</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr data-ng-repeat="c in vm.motto | filter:vm.filter track by c.id">
+                                <td><span class="motto-name">{{c.name}}</span></td>
+                                <td>{{c.description | limitTo: 2000 }} ...</td>
+                                <td>{{c.lang | uppercase }}</td>
+                                <td>{{c.category | lowercase }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
