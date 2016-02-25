@@ -1,58 +1,46 @@
-#AngularJS Agenda
-Demonstrates Angular modularity, testing, Gulp task automation, and more.
+#AngularUI Agenda
+Demonstrates how is build an AngularJS application using best practices, based on AngularUI and Bootstrap, and of course, Angular Local Storage.
 
-## Structure
-	/build 	(created on the fly)
-	/gulp	
-	/src
+##What the application do?
+With this app you can record your contacts. After that, you can edit them or remove them from your application. 
+
+##Structure
+	/presentation
+		/assets
+			/css
+			/images
+			/js
 		/client
 			/app
 			/content
-			/test
-		/server
-			/data
-			/routes
 	
-## Requirements
+##Requirements
 
-- Install Node
-- Type `npm install -g node-inspector bower gulp`
-- Type `bower install`
+- Install Vagrant
 
-## Running
+##Running
 Runs locally, no database required.
 
-### Dev Builds
-The dev build does not optimize the deployed code. It simply runs it in place. You can run a dev build in multiple ways.
+## Setup instructions
 
-####Option 1 - Serve
-Type `gulp serve-dev` and browse to `http://localhost:7200`
+###Setup Vagrant for local development
 
-####Option 2 - Serve and Debug Node
-Type `gulp serve-dev-debug` and browse to `http://localhost:7200` for the client and `http://localhost:8080/debug?port-5858` to debug the server.
+For Windows/OS-X/Linux you must follow the next steps:
+1. Install Virtualbox from http://virtualbox.org
+2. Install Vagrant from http://vangratup.com
+3. Go to folder where the application is
+4. Modify hosts file adding the line:
+		192.168.33.170 agenda.dev
+	the  file can be found on 
+	/etc/hosts on OS-X/Linux or
+	%SystemRoot%\System32\drivers\etc\hosts on Windows
+5. Open a terminal (on OS-X or Linux) or command prompt (on Windows)
+6. run command: vagrant up
+7. to access the shell of the virtual machine type on a terminal (you must be in the application folder):
+		vagrant ssh
+8. Now you can access the application on your prefered broswer:
+		http://agenda.dev/client/
 
-####Option 3 - Serve and Debug Node Breaking on 1st Line
-Type `gulp serve-dev-debug-brk` and browse to `http://localhost:7200` for the client and `http://localhost:8080/debug?port-5858` to debug the server.
-
-### Staging Build
-The staging build is an optimized build. Type `gulp serve-stage` and browse to `http://localhost:7200`
-
-The optimizations are performed by the gulp tasks and include the following list. See the `gulpfile.js` for details
-
-- jshint
-- preparing Angular's templatecache for html templates
-- concat task to bundle css and js, separately
-- Angular dependency injection annotations using ngAnnotate
-- uglify to minify and mangle javascript
-- source maps
-- css autoprefixer for vendor prefixes
-- minify css
-- optimize images
-- index.html injection for scripts and links
-- deploying all js, css, images, fonts, and index.html
-
-## Testing
-Type `gulp test` to run the tests including both unit and midway tests (spins up a server). This will create a watch on the files, with a 5 second delay, to run the tests.
-
-Testing uses karma, mocha, chai, sinon, ngMidwayTester libraries.
+##The end
+That's all. For any questions please contact me at: gheorghe.morodan@nordlogic.com
 
