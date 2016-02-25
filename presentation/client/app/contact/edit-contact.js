@@ -6,8 +6,8 @@
         .controller ( 'editContact', editContact );
 
     /* @ngInject */
-    editContact.$inject = [ 'logger', 'dataservice', '$routeParams' ];
-    function editContact ( logger, dataservice, $routeParams ) {
+    editContact.$inject = [ 'logger', 'dataservice', '$routeParams', "$location" ];
+    function editContact ( logger, dataservice, $routeParams, $location ) {
         /*jshint validthis: true */
         var vm         = this;
         vm.contact     = {
@@ -25,12 +25,18 @@
         activate ();
 
         function activate () {
+            vm.contact = dataservice.getData(vm.id);
             logger.info ( 'Activated Agenda contact editing form' );
         }
 
         function updateForm ( editContactForm ) {
             if ( editContactForm ) {
-                // code for update!
+                if (!dataservice.updateData(vm.contact)){
+                    logger.error('update cannot be performed!');
+                } else {
+                    $location.path('/agenda');
+                    logger.info('contact updated successfully');
+                }
             } else {
                 logger.warning ( 'The edit form is not completed!' );
             }

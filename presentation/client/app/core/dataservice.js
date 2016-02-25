@@ -18,6 +18,7 @@
             saveData       : saveData,
             getData        : getData,
             deleteData     : deleteData,
+            updateData     : updateData,
         };
 
         return service;
@@ -27,7 +28,7 @@
             var items = [];
             if ( list.length < 1 ) {
                 logger.warning ( 'Agenda is empty. Please try to add a new contact.' );
-                return false;
+                return null;
             } else {
                 for ( var i = 0; i < list.length; i++ ) {
                     items[ i ] = {};
@@ -38,7 +39,12 @@
         }
 
         function getAgendaCount () {
-            return localStorageService.length ();
+            var len = localStorageService.length ();
+            if (!len){
+                return 0;
+            } else {
+                return len;
+            }
         }
 
         function prime () {
@@ -82,5 +88,9 @@
             return localStorageService.remove ( id );
         }
 
+        function updateData(person) {
+            deleteData(person.id);
+            return saveData(person);
+        }
     }
 }) ();
