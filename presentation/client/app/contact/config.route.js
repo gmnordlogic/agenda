@@ -5,8 +5,6 @@
         .module('app.newcontact')
         .run(appRun);
 
-    // appRun.$inject = ['routehelper']
-
     /* @ngInject */
     appRun.$inject = ['routehelper'];
     function appRun(routehelper) {
